@@ -1,42 +1,25 @@
-import React from "react";
-import 'bulma/css/bulma.css';
-import '@fortawesome/fontawesome-free/js/all';
-import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Cliente from "./pages/Cliente";
-import { ModalContextProvider } from "./contexts/modalContext";
-import Axios from 'axios';
+import "./App.css";
+import About from "./components/landing/About";
+import Contact from "./components/landing/Contact";
+import Footer from "./components/landing/Footer";
+import Home from "./components/landing/Home";
+import Testimonial from "./components/landing/Testimonial";
+import Work from "./components/landing/Work";
 
-//configuracion para axios
 
-//Axios.interceptors.request.use()
-
-Axios.interceptors.request.use(function(config) {
-  //para saber que valores tiene config
-  //console.log(config);
-
-  //para configurar la url && se aplica template string
-  config.url = `${process.env.REACT_APP_API_BASE_URL}${config.url}`;
-  return config;
-})
 
 function App() {
-  //se cambio a este nuevo
-  //ya no se usa
-  /*
-  ya no se usa switch y tamópvo component en route
-  */
   return (
-    //cuando usamos el modal context debemos declarar el model cotext provider
-    <ModalContextProvider>
-      <Router>
-          <Routes>
-              <Route path="/" element={<Home/>} />
-              <Route path="/clientes" element={<Cliente/>}/>
-          </Routes>
-      </Router>
-    </ModalContextProvider>
+    <div className="App">
+      <Home/>
+      <About/>
+      <Work/>
+      <Testimonial/>
+      <Contact/>
+      <Footer/>
+    </div>
   );
 }
 
 export default App;
+
