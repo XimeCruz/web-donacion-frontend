@@ -2,6 +2,7 @@ body {
   margin: 0;
   line-height: normal;
   font-family: sans-serif;
+  
 }
 
 
@@ -12,12 +13,13 @@ body {
   align-items: center;
   justify-content: center;
   color: rgb(8, 8, 8);
-  background: linear-gradient(0deg, rgb(219, 232, 223) 20%, #7aeb66 100%);
+  background: linear-gradient(0deg, rgb(219, 232, 223) 25%, #7aeb66 100%);
 }
 
 .form-container, .form {
   display: flex;
   flex-direction: column;
+  
   /*background-color: #7aeb66;  color del form*/
 }
 
@@ -27,6 +29,7 @@ body {
     border: 1px solid rgb(149, 117, 117);
     border-radius: 10px;
     margin: 0.5rem;
+    
   }
 }
 
