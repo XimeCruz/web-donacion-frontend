@@ -12,6 +12,8 @@ import Work from "./components/landing/Work";
 
 
 import  RegistrationForm  from "./components/RegistrationForm";
+import RegisterVolun from "./components/RegisterVolun";
+import RegisterDon from "./components/RegisterDon";
 
 
 function App() {
@@ -26,7 +28,6 @@ function App() {
             element={
               <>
                 <Home />
-                <RegistrationForm />
                 <About />
                 <Work />
                 <Testimonial />
@@ -36,6 +37,11 @@ function App() {
             }
           />
           <Route path="/userform" element={<UserForm user={[user, setUser]} />} />
+          <Route path="formOrg" element={<RegistrationForm />} />
+          <Route path="regVol" element={<RegisterVolun />} />
+          <Route path="regdon" element={<RegisterDon />} />
+          
+
         </Routes>
       </BrowserRouter>
     </div>

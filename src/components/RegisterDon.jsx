@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../styles/estilosOrgReg.css';
-import registrationImage from '../images/casaorg.png';
+import '../styles/estilosOrgReg.css'; // Asegúrate de importar los estilos necesarios
+import registrationImage from '../images/donan.png'; // Asegúrate de importar la imagen necesaria
 import { validarPass } from "../functions/validarPassword";
 
-const RegistrationForm = () => {
+const RegisterDon = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const [correoValido, setCorreoValido] = useState(true);
@@ -45,35 +45,34 @@ const RegistrationForm = () => {
     <div className="registration-container">
       <div className="form-container">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h2>Regístrate organización:</h2>
+          <h2>Regístrate como donante:</h2>
           <div className="campoUser">
             <input type="text"{...register("fullName", { required: "El nombre completo es obligatorio" })} placeholder="Nombre completo" />
             {errors.fullName && <p className="campoInvalido">{errors.fullName.message}</p>}
           </div>
           <div className="campoUser">
-          <input type="email" {...register("email", { required: "El correo electrónico es obligatorio", pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} placeholder="Correo electrónico" />
-          {errors.email && <p className="campoInvalido">{errors.email.message}</p>}
-          {!correoValido && <p className="campoInvalido">El correo ya está en uso</p>}
+            <input type="email" {...register("email", { required: "El correo electrónico es obligatorio", pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} placeholder="Correo electrónico" />
+            {errors.email && <p className="campoInvalido">{errors.email.message}</p>}
+            {!correoValido && <p className="campoInvalido">El correo ya está en uso</p>}
           </div>
           <div className="campoUser">
-          <input type="password" {...register("password", { required: "La contraseña es obligatoria" })} placeholder="Contraseña" />
-          {errors.password && <p className="campoInvalido">{errors.password.message}</p>}
-          {!passwordValido && (
-            <p className="campoInvalido">
-              Contraseña inválida. Debe contener al menos 1 número, 1 mayúscula, 1 minúscula, 1 carácter especial y tener 8 caracteres.
-            </p>
-          )}
+            <input type="password" {...register("password", { required: "La contraseña es obligatoria" })} placeholder="Contraseña" />
+            {errors.password && <p className="campoInvalido">{errors.password.message}</p>}
+            {!passwordValido && (
+              <p className="campoInvalido">
+                Contraseña inválida. Debe contener al menos 1 número, 1 mayúscula, 1 minúscula, 1 carácter especial y tener 8 caracteres.
+              </p>
+            )}
           </div>
           <div className="campoUser">
-          <input type="password" {...register("confirmPassword", { required: "Debes confirmar la contraseña" })} placeholder="Confirmar Contraseña" />
-          {errors.confirmPassword && <p className="campoInvalido">{errors.confirmPassword.message}</p>}
+            <input type="password" {...register("confirmPassword", { required: "Debes confirmar la contraseña" })} placeholder="Confirmar Contraseña" />
+            {errors.confirmPassword && <p className="campoInvalido">{errors.confirmPassword.message}</p>}
           </div>
           <div className="campoUser">
-          <label className="labelRegistro">Fecha Nacimiento: </label>
-          <input type="date" {...register("dateOfBirth", { required: "La fecha de nacimiento es obligatoria" })} placeholder="Fecha de nacimiento" />
-          {errors.dateOfBirth && <p className="campoInvalido">{errors.dateOfBirth.message}</p>}
+            <label className="labelRegistro">Fecha de Nacimiento:</label>
+            <input type="date" {...register("dateOfBirth", { required: "La fecha de nacimiento es obligatoria" })} />
+            {errors.dateOfBirth && <p className="campoInvalido">{errors.dateOfBirth.message}</p>}
           </div>
-        
           <label>
             <input type="checkbox" class="custom-checkbox" {...register("belongsToOrganization")} />
             ¿Pertenece a una organización benéfica?
@@ -91,11 +90,13 @@ const RegistrationForm = () => {
           
             </>
           )}
-          <label className='boton' >
-            <input type="checkbox" class="custom-checkbox" {...register("termsAccepted", { required: "Debe aceptar los términos y condiciones" })} />
-            Aceptar términos y condiciones del servicio
-          </label>
-          {errors.termsAccepted && <p className="campoInvalido">Debe aceptar los términos y condiciones</p>}
+          <div className="campoUser">
+            <label className='boton' >
+              <input type="checkbox" className="custom-checkbox" {...register("termsAccepted", { required: "Debe aceptar los términos y condiciones" })} />
+              Aceptar términos y condiciones del servicio
+            </label>
+            {errors.termsAccepted && <p className="campoInvalido">Debe aceptar los términos y condiciones</p>}
+          </div>
           <div className="button-container">
             <button type="button" onClick={handleSubmit} className="cancel-button">
               Cancelar
@@ -111,8 +112,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
-
-
-
-
+export default RegisterDon;

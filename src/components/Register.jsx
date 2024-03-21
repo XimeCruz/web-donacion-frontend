@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Password } from "./Password";
 import { useForm } from "react-hook-form";
 import { validarPass } from "../functions/validarPassword";
+
 import { registrarUsuario } from "../api/registro.api";
 import { useNavigate } from "react-router-dom";
 

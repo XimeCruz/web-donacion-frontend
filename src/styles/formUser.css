@@ -14,6 +14,10 @@ body {
   justify-content: center;
   color: rgb(8, 8, 8);
   background: linear-gradient(0deg, rgb(219, 232, 223) 25%, #7aeb66 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .form-container, .form {
@@ -114,4 +118,5 @@ body {
 .captcha {
   margin-top: 10px;
   margin-bottom: 10px;
+  align-items: center;
 }

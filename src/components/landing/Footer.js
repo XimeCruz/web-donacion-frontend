@@ -13,10 +13,10 @@ const Footer = () => {
           <img src={Logo} alt="" />
         </div>
         <p>
-           FOOD FOR EVERYTHING
+           FOOD FOR EVERYBODY
         </p>
         <p>
-        Copyright © 2024 Food For Everything
+        Copyright © 2024 Food For EveryBody
         </p>
         <p>
         Todos los derechos reservados
@@ -40,9 +40,9 @@ const Footer = () => {
         </div>
         <div className="footer-section-columns">
           <span>+591-7583-6165</span>
-          <span>xcruzt@food4everything.com</span>
-          <span>maldabat@food4everything.com</span>
-          <span>jtittoq@food4everything.com</span>
+          <span>xcruzt@food4everybody.com</span>
+          <span>maldabat@food4everybody.com</span>
+          <span>jtittoq@food4everybody.com</span>
         </div>
       </div>
     </div>

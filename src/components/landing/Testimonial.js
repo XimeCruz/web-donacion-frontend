@@ -11,7 +11,7 @@ const Testimonial = () => {
         <p className="primary-subheading">Empresas Aliadas</p>
         <h1 className="primary-heading-black">Conoce a quienes nos ayudan</h1>
         <p className="primary-text">
-        En Food for Everything, extendemos nuestro más sincero agradecimiento a nuestras empresas aliadas. Gracias por ser catalizadores esenciales en nuestra misión compartida de luchar contra la inseguridad alimentaria. Su apoyo constante y generoso nos permite hacer una diferencia significativa en las vidas de aquellos que más lo necesitan. Juntos, estamos construyendo un futuro más justo y alimentando la esperanza en nuestras comunidades. ¡Gracias por ser parte fundamental de este viaje solidario!
+        En Food for EveryBody, extendemos nuestro más sincero agradecimiento a nuestras empresas aliadas. Gracias por ser catalizadores esenciales en nuestra misión compartida de luchar contra la inseguridad alimentaria. Su apoyo constante y generoso nos permite hacer una diferencia significativa en las vidas de aquellos que más lo necesitan. Juntos, estamos construyendo un futuro más justo y alimentando la esperanza en nuestras comunidades. ¡Gracias por ser parte fundamental de este viaje solidario!
         </p>
       </div>
       <div className="testimonial-section-bottom">

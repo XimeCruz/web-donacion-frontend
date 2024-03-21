@@ -15,16 +15,16 @@ const About = () => {
       <div className="about-section-text-container">
         <p className="primary-subheading">Sobre Nosotros</p>
         <h1 className="primary-heading">
-          Food For Everything
+          Food For EveryBody
         </h1>
         <p className="primary-text">
-        Bienvenido a Food for Everything, el punto de encuentro donde convergen la generosidad, 
+        Bienvenido a Food for EveryBody, el punto de encuentro donde convergen la generosidad, 
         la solidaridad y la esperanza. En nuestro compromiso constante por construir un mundo más 
         equitativo, hemos creado esta plataforma para conectar a donantes compasivos, voluntarios 
         entregados y aquellos que buscan apoyo alimentario. 
         </p>
         <p className="primary-text">
-        En el corazón de Food for Everything 
+        En el corazón de Food for EveryBody 
         yace la convicción de que cada alimento compartido es una semilla de cambio. Nos esforzamos 
         por simplificar el proceso de donación y recolección, tejiendo así una red de apoyo que abraza 
         a comunidades enteras. Únete a nosotros en este viaje, donde cada pequeño acto de generosidad 

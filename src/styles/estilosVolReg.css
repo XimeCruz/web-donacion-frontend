@@ -107,7 +107,8 @@ nav a {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="date"] {
+input[type="date"],
+input[type="tel"] {
   width: 100%;
   padding: 12px; /* mejorar el tamaño */
   margin-bottom: 15px; /*espacio entre los inputs */
@@ -128,6 +129,33 @@ label {
   white-space: nowrap;
   margin-right: 10px;
 }
+/* Estilos específicos para el formulario de registro de voluntarios */
+
+.campoUser1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.disponibilidad-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Cambia esto si prefieres que los checkboxes estén alineados al centro */
+  width: 100%;
+}
+
+.custom-checkbox1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Espacio entre cada checkbox */
+}
+
+.custom-checkbox1 input[type="checkbox"] {
+  margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+
 
 .boton {
   color:#45a049;
@@ -135,7 +163,7 @@ label {
 button[type="submit"] {
   background-color: #4caf50;
   color: #fff;
-  padding: 12px 20px; /*padding para mejorar el tamaño */
+  padding: 12px 20px; /* tamaño */
   border: none;
   border-radius: 5px; /*radio de los bordes */
   cursor: pointer;
@@ -145,14 +173,14 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-
+/* Imagen */
 .image-container {
   text-align: center;
   margin-top: 20px;
 }
 
 .image-container img {
-  max-width: 650px;
+  max-width: 500px; /* tamaño de la imagen */
   height: auto;
 }
 .campoUser {
@@ -160,9 +188,47 @@ button[type="submit"]:hover {
   width: 100%;
   align-items: center;
 }
-.custom-checkbox:checked {
-  background-color: #21f228;
-  color:#61d765;
+
+.custom-checkbox input[type="checkbox"] {
+  display: none; /* oculta el checkbox original */
 }
 
+.custom-checkbox label {
+  position: relative;
+  display: inline-block;
+  padding-left: 30px; /* ajusta el espacio para el icono */
+  margin-right: 10px; /* ajusta el espacio entre los checkboxes */
+  cursor: pointer;
+}
 
+.custom-checkbox label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* tamaño del checkbox */
+  height: 20px; /* tamaño del checkbox */
+  border: 2px solid #4caf50; /* color del borde */
+  border-radius: 3px; /* radio del borde */
+  background-color: #fff; /* color de fondo */
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+  background-color: #4caf50; /* color de fondo cuando está marcado */
+}
+
+.custom-checkbox label:after {
+  content: '\2713'; /* símbolo de marca de verificación */
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff; /* color del símbolo */
+  font-size: 14px; /* tamaño del símbolo */
+  display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+  display: block; /* muestra el símbolo cuando está marcado */
+}

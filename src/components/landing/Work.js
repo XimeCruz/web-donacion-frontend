@@ -27,12 +27,12 @@ const Work = () => {
         <p className="primary-subheading">Trabajo</p>
         <h1 className="primary-heading">¿Como trabajamos?</h1>
         <p className="primary-text">
-        En Food for Everything, transformamos la generosidad en acción significativa. Nuestra plataforma sirve como un puente vital entre 
+        En Food for EveryBody, transformamos la generosidad en acción significativa. Nuestra plataforma sirve como un puente vital entre 
         donantes altruistas y organizaciones benéficas dedicadas, facilitando un proceso fluido de donación y distribución de alimentos. 
         Los donantes encuentran en nosotros una vía para impactar directamente en sus comunidades, mientras que los voluntarios hallan 
         oportunidades significativas para poner en práctica su deseo de ayudar. Las organizaciones beneficiadas, a su vez, reciben un 
         flujo constante de recursos esenciales, permitiéndoles ampliar su impacto y llegar a aquellos que más lo necesitan. En Food for 
-        Everything, cada contribución, ya sea en forma de alimentos, tiempo o recursos, se traduce en un acto tangible de solidaridad que 
+        EveryBody, cada contribución, ya sea en forma de alimentos, tiempo o recursos, se traduce en un acto tangible de solidaridad que 
         deja una huella duradera en las vidas de aquellos que servimos. Únete a nosotros y sé parte de esta cadena de apoyo que nutre a 
         comunidades enteras y crea un cambio duradero.
         </p>

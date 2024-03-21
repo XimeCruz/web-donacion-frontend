@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import { FiArrowRight } from "react-icons/fi";
 import BannerBackground from "../../../src/assets/home-banner-background.png";
 import BannerImage from "../../../src/assets/home-banner-image.png";
+import RegisterVolun from '../RegisterVolun';
 
 const Home = () => {
   return (
@@ -24,7 +25,9 @@ const Home = () => {
             Cada acción cuenta
           </p>
           <button className="secondary-button">
-            Regístrate <FiArrowRight />
+             <Link to="/regVol">
+                    Recibir ayuda
+                </Link>
           </button>
           {/* Botón LOGIN */}
           <Link to="/userform" className="secondary-button">

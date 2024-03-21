@@ -15,6 +15,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -50,8 +51,15 @@ const Navbar = () => {
                 <a href="">¿Como trabajamos?</a>        
                 <a href="">Empresas aliadas</a>
                 <a href="">Contacto</a>
-                <button className="primary-button">Recibir ayuda</button>
-                <button className="primary-button">Quiero ayudar</button>
+                <button className="primary-button">
+                <Link to="/formOrg" className='botonOrg'>
+                    Recibir ayuda
+                </Link>
+                    </button>
+                <button className="primary-button">
+                    <Link to="/regdon" className='botonOrg'>
+                    Quiero Ayudar
+                </Link></button>
             </div>
             <div className="navbar-menu-container">
                 <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
