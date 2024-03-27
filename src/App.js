@@ -37,9 +37,9 @@ function App() {
             }
           />
           <Route path="/userform" element={<UserForm user={[user, setUser]} />} />
-          <Route path="formOrg" element={<RegistrationForm />} />
-          <Route path="regVol" element={<RegisterVolun />} />
-          <Route path="regdon" element={<RegisterDon />} />
+          <Route path="/formOrg" element={<RegistrationForm />} />
+          <Route path="/regVol" element={<RegisterVolun />} />
+          <Route path="/regdon" element={<RegisterDon />} />
           
 
         </Routes>

@@ -1,35 +1,14 @@
-/* estilosPrueba.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
 
-/* Encabezado y navegación */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-h2 {
+.h2VolReg {
   text-align: 'center';
   color:#45a049;
   padding: auto;
   margin-bottom: 20px;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 10px;
-}
 
 /* Formulario de registro */
-.registration-container {
+.registration-containerVolReg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,19 +16,28 @@ nav a {
   background-color: #f2f2f2;
   font-family: Arial, sans-serif;
 }
+.entradaDatosVolReg {
+  display: flex;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  background-color:rgb(229, 245, 240);
+}
 
-.form-container {
+.form-containerVolReg {
   flex: 1;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px; /* Aumenta el ancho máximo del formulario */
+  max-width: 500px; /* Aumenta el ancho máximo del formulario */
 }
 
-.button-container {
+.button-containerVolReg {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
 }
 
@@ -77,7 +65,7 @@ nav a {
 }
 
 @media (max-width: 768px) {
-  .registration-container {
+  .registration-containerVolReg {
     flex-direction: column;
     height: auto;
     padding: 20px;
@@ -86,16 +74,18 @@ nav a {
   .form-container,
   .image-container {
     max-width: 100%;
+    
   }
 
   .image-container {
     margin-left: 0;
     margin-top: 20px;
+    height: auto;
   }
 }
 
 /* Estilos adicionales para el formulario */
-.registration-form {
+.registration-formVolReg {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -104,62 +94,54 @@ nav a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-input[type="tel"] {
-  width: 100%;
-  padding: 12px; /* mejorar el tamaño */
-  margin-bottom: 15px; /*espacio entre los inputs */
-  border: 1px solid #ccc;
-  border-radius: 10px; /*radio de los bordes */
-  box-sizing: border-box;
-  font-size: 16px; /* tamaño de la fuente */
-}
 
 
-label {
+.labelVolReg {
   font-weight:100;
   display: block;
   margin-bottom: 10px; /*espacio entre las etiquetas y los inputs */
 }
-.labelRegistro {
+.labelRegistroVolReg {
   font-weight: bold;
   white-space: nowrap;
   margin-right: 10px;
 }
 /* Estilos específicos para el formulario de registro de voluntarios */
 
-.campoUser1 {
+.campoUserVolReg {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.disponibilidad-container1 {
+.disponibilidad-containerVolReg {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Cambia esto si prefieres que los checkboxes estén alineados al centro */
   width: 100%;
 }
 
-.custom-checkbox1 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* Espacio entre cada checkbox */
-}
-
-.custom-checkbox1 input[type="checkbox"] {
-  margin-right: 10px; /* Espacio entre el checkbox y el texto */
-}
-
 
 
 .boton {
   color:#45a049;
+
 }
+.boton input{
+  margin-right: 10px;
+}
+.disp {
+  position: relative;
+  
+  padding-left: 30px; /* ajusta el espacio para el icono */
+  margin-right: 10px; /* ajusta el espacio entre los checkboxes */
+  cursor: pointer;
+}
+.disp input {
+  margin-right: 10px;
+}
+
 button[type="submit"] {
   background-color: #4caf50;
   color: #fff;
@@ -174,26 +156,25 @@ button[type="submit"]:hover {
 }
 
 /* Imagen */
-.image-container {
+.image-containerVolReg {
   text-align: center;
   margin-top: 20px;
 }
 
-.image-container img {
-  max-width: 500px; /* tamaño de la imagen */
+.image-containerVolReg img {
+  max-width: 650px; /* tamaño de la imagen */
   height: auto;
 }
-.campoUser {
+
+.campoUserVolReg {
   display: flex;
   width: 100%;
   align-items: center;
 }
 
-.custom-checkbox input[type="checkbox"] {
-  display: none; /* oculta el checkbox original */
-}
 
-.custom-checkbox label {
+
+.custom-checkboxVolReg label {
   position: relative;
   display: inline-block;
   padding-left: 30px; /* ajusta el espacio para el icono */
@@ -201,34 +182,15 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
-.custom-checkbox label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px; /* tamaño del checkbox */
-  height: 20px; /* tamaño del checkbox */
-  border: 2px solid #4caf50; /* color del borde */
-  border-radius: 3px; /* radio del borde */
-  background-color: #fff; /* color de fondo */
-}
 
-.custom-checkbox input[type="checkbox"]:checked + label:before {
+
+.custom-checkboxVolReg input[type="checkbox"]:checked + label:before {
   background-color: #4caf50; /* color de fondo cuando está marcado */
+
 }
 
-.custom-checkbox label:after {
-  content: '\2713'; /* símbolo de marca de verificación */
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  color: #fff; /* color del símbolo */
-  font-size: 14px; /* tamaño del símbolo */
-  display: none;
-}
 
-.custom-checkbox input[type="checkbox"]:checked + label:after {
+
+.custom-checkboxVolReg input[type="checkbox"]:checked + label:after {
   display: block; /* muestra el símbolo cuando está marcado */
 }

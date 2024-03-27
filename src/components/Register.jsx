@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Password } from "./Password";
+import { PasswordReg } from "./PasswordReg";
 import { useForm } from "react-hook-form";
 import { validarPass } from "../functions/validarPassword";
 
@@ -66,8 +66,9 @@ export function Register({ setLogin }) {
           {errors.Correo && <p className="campoInvalido">{errors.Correo.message}</p>}
           {!correoValido && <p className="campoInvalido">El correo ya está en uso</p>}
         </div>
-        <Password
+        <PasswordReg
           pass={register("Contraseña", { required: "La contraseña es obligatoria", maxLength: { value: 45, message: "La contraseña no puede tener más de 45 caracteres" } })}
+          confirmPass={register("ContraseñaRepetida", { required: "Debes repetir la contraseña", validate: (value) => value === password || "Las contraseñas no coinciden" })}
         />
         {errors.Contraseña && <p className="campoInvalido">{errors.Contraseña.message}</p>}
         {!valido && (
@@ -81,15 +82,7 @@ export function Register({ setLogin }) {
             <br />8 caracteres.
           </p>
         )}
-        <div className="campoUser">
-          <input
-            type="password"
-            placeholder="Repetir Contraseña"
-            className="entradaDatos"
-            {...register("ContraseñaRepetida", { required: "Debes repetir la contraseña", validate: (value) => value === password || "Las contraseñas no coinciden" })}
-          />
-          {errors.ContraseñaRepetida && <p className="campoInvalido">{errors.ContraseñaRepetida.message}</p>}
-        </div>
+      
         <div className="campoUser">
           <input
             placeholder="Ubicación"
@@ -106,18 +99,7 @@ export function Register({ setLogin }) {
           />
           {errors.Telefono && <p className="campoInvalido">{errors.Telefono.message}</p>}
         </div>
-        <div className="campoUser">
-          <label className="labelRegistro">Rol:</label>
-          <select
-            className="elegirGenero"
-            {...register("Rol", { required: "Debes seleccionar un rol" })}
-          >
-            <option value="Donante">Donante</option>
-            <option value="Voluntario">Voluntario</option>
-            <option value="Receptor">Receptor</option>
-          </select>
-          {errors.Rol && <p className="campoInvalido">{errors.Rol.message}</p>}
-        </div>
+        
         <button className="sendUserForm" type="submit">
           Registrarse
         </button>

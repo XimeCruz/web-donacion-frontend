@@ -5,8 +5,17 @@ import { FiArrowRight } from "react-icons/fi";
 import BannerBackground from "../../../src/assets/home-banner-background.png";
 import BannerImage from "../../../src/assets/home-banner-image.png";
 import RegisterVolun from '../RegisterVolun';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleRegistrate = () => {
+    navigate("/regVol" );
+  };
+
+  const handleIniciarSesion = () => {
+    navigate("/userform");
+  };
   return (
     <div className="home-container">
       <Navbar />
@@ -24,15 +33,14 @@ const Home = () => {
           <p className="primary-text">
             Cada acción cuenta
           </p>
-          <button className="secondary-button">
-             <Link to="/regVol">
-                    Recibir ayuda
-                </Link>
+          
+          <button  className="secondary-button" onClick={handleRegistrate}>
+                    QUIERO AYUDAR
           </button>
-          {/* Botón LOGIN */}
-          <Link to="/userform" className="secondary-button">
-            LOGIN
-          </Link>
+
+          <button className="secondary-button"onClick={handleIniciarSesion}>
+            INICIAR SESIÓN
+          </button>
         </div>
         <div className="home-image-section">
           <img src={BannerImage} alt="" />

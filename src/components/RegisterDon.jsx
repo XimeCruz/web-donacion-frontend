@@ -42,21 +42,21 @@ const RegisterDon = () => {
   };
 
   return (
-    <div className="registration-container">
-      <div className="form-container">
+    <div className="registration-containerRegOrg">
+      <div className="form-containerRegOrg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h2>Regístrate como donante:</h2>
           <div className="campoUser">
-            <input type="text"{...register("fullName", { required: "El nombre completo es obligatorio" })} placeholder="Nombre completo" />
+            <input className="entradaDatos1" type="text"{...register("fullName", { required: "El nombre completo es obligatorio" })} placeholder="Nombre completo" />
             {errors.fullName && <p className="campoInvalido">{errors.fullName.message}</p>}
           </div>
           <div className="campoUser">
-            <input type="email" {...register("email", { required: "El correo electrónico es obligatorio", pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} placeholder="Correo electrónico" />
+            <input className="entradaDatos1" type="email" {...register("email", { required: "El correo electrónico es obligatorio", pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} placeholder="Correo electrónico" />
             {errors.email && <p className="campoInvalido">{errors.email.message}</p>}
             {!correoValido && <p className="campoInvalido">El correo ya está en uso</p>}
           </div>
           <div className="campoUser">
-            <input type="password" {...register("password", { required: "La contraseña es obligatoria" })} placeholder="Contraseña" />
+            <input className="entradaDatos1" type="password" {...register("password", { required: "La contraseña es obligatoria" })} placeholder="Contraseña" />
             {errors.password && <p className="campoInvalido">{errors.password.message}</p>}
             {!passwordValido && (
               <p className="campoInvalido">
@@ -65,12 +65,12 @@ const RegisterDon = () => {
             )}
           </div>
           <div className="campoUser">
-            <input type="password" {...register("confirmPassword", { required: "Debes confirmar la contraseña" })} placeholder="Confirmar Contraseña" />
+            <input className="entradaDatos1" type="password" {...register("confirmPassword", { required: "Debes confirmar la contraseña" })} placeholder="Confirmar Contraseña" />
             {errors.confirmPassword && <p className="campoInvalido">{errors.confirmPassword.message}</p>}
           </div>
           <div className="campoUser">
             <label className="labelRegistro">Fecha de Nacimiento:</label>
-            <input type="date" {...register("dateOfBirth", { required: "La fecha de nacimiento es obligatoria" })} />
+            <input className="entradaDatos1" type="date" {...register("dateOfBirth", { required: "La fecha de nacimiento es obligatoria" })} />
             {errors.dateOfBirth && <p className="campoInvalido">{errors.dateOfBirth.message}</p>}
           </div>
           <label>
@@ -78,11 +78,11 @@ const RegisterDon = () => {
             ¿Pertenece a una organización benéfica?
           </label>
           <div className="campoUser">
-              <input type="text"{...register("organizationName", { required: "El nombre de la organización es obligatorio" })} placeholder="Nombre de organización" />
+              <input className="entradaDatos1" type="text"{...register("organizationName", { required: "El nombre de la organización es obligatorio" })} placeholder="Nombre de organización" />
               {errors.organizationName && <p className="campoInvalido">{errors.organizationName.message}</p>}
               </div>
               <div className="campoUser">
-              <input type="text"{...register("address", { required: "La dirección es obligatoria" })} placeholder="Dirección" />
+              <input className="entradaDatos1" type="text"{...register("address", { required: "La dirección es obligatoria" })} placeholder="Dirección" />
               {errors.address && <p className="campoInvalido">{errors.address.message}</p>}
               </div>
           {belongsToOrganization && (

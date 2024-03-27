@@ -15,10 +15,12 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
+    const navigate = useNavigate();
+
     const menuOptions = [
         {
         text: "Home",
@@ -41,6 +43,14 @@ const Navbar = () => {
         icon: <ShoppingCartRoundedIcon />,
         },
     ];
+
+    const handleQuieroAyudar = () => {
+        navigate('/formOrg');
+      };
+    
+      const handleRegDon = () => {
+        navigate('/regdon');
+      };
     return (
         <nav>
             <div className="nav-logo-container">
@@ -51,16 +61,14 @@ const Navbar = () => {
                 <a href="">¿Como trabajamos?</a>        
                 <a href="">Empresas aliadas</a>
                 <a href="">Contacto</a>
-                <button className="primary-button">
-                <Link to="/formOrg" className='botonOrg'>
+                <button className="primary-button" onClick={handleQuieroAyudar}>
                     Recibir ayuda
-                </Link>
-                    </button>
-                <button className="primary-button">
-                    <Link to="/regdon" className='botonOrg'>
-                    Quiero Ayudar
-                </Link></button>
-            </div>
+                </button>
+                <button className="primary-button" onClick={handleRegDon}>
+                    Quiero donar
+                </button>
+                
+                </div>
             <div className="navbar-menu-container">
                 <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
             </div>
