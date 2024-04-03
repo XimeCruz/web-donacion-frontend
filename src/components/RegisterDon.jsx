@@ -5,20 +5,24 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/estilosOrgReg.css'; // Asegúrate de importar los estilos necesarios
 import registrationImage from '../images/donan.png'; // Asegúrate de importar la imagen necesaria
 import { validarPass } from "../functions/validarPassword";
+import { PasswordRForm } from "./PasswordRForm";
 
 const RegisterDon = () => {
   const navigate = useNavigate();
+  
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [valido, setValido] = useState(true);
   const [correoValido, setCorreoValido] = useState(true);
   const [passwordValido, setPasswordValido] = useState(true);
+  
 
   const password = watch("password", "");
   const belongsToOrganization = watch("belongsToOrganization", false);
 
-  const onSubmit = async (data) => {
+  const onSubmit = handleSubmit(async (data) => {
     setCorreoValido(true);
-    const temp = validarPass(data.password);
-    setPasswordValido(temp);
+    const temp = validarPass(data.Contraseña);
+    setValido(temp);
 
     if (!temp) {
       return; // Si la contraseña no es válida, detener la ejecución aquí.
@@ -39,7 +43,7 @@ const RegisterDon = () => {
       }
       // Manejar otros errores
     }
-  };
+  });
 
   return (
     <div className="registration-containerRegOrg">
@@ -55,35 +59,37 @@ const RegisterDon = () => {
             {errors.email && <p className="campoInvalido">{errors.email.message}</p>}
             {!correoValido && <p className="campoInvalido">El correo ya está en uso</p>}
           </div>
-          <div className="campoUser">
-            <input className="entradaDatos1" type="password" {...register("password", { required: "La contraseña es obligatoria" })} placeholder="Contraseña" />
-            {errors.password && <p className="campoInvalido">{errors.password.message}</p>}
-            {!passwordValido && (
-              <p className="campoInvalido">
-                Contraseña inválida. Debe contener al menos 1 número, 1 mayúscula, 1 minúscula, 1 carácter especial y tener 8 caracteres.
-              </p>
-            )}
-          </div>
-          <div className="campoUser">
-            <input className="entradaDatos1" type="password" {...register("confirmPassword", { required: "Debes confirmar la contraseña" })} placeholder="Confirmar Contraseña" />
-            {errors.confirmPassword && <p className="campoInvalido">{errors.confirmPassword.message}</p>}
-          </div>
-          <div className="campoUser">
-            <label className="labelRegistro">Fecha de Nacimiento:</label>
-            <input className="entradaDatos1" type="date" {...register("dateOfBirth", { required: "La fecha de nacimiento es obligatoria" })} />
-            {errors.dateOfBirth && <p className="campoInvalido">{errors.dateOfBirth.message}</p>}
-          </div>
+          <PasswordRForm
+            pass={register("Contraseña", { required: "La contraseña es obligatoria", maxLength: { value: 45, message: "La contraseña no puede tener más de 45 caracteres" } })}
+            confirmPass={register("ContraseñaRepetida", { required: "Debes repetir la contraseña", validate: (value) => value === password || "Las contraseñas no coinciden" })}
+          />
+          {errors.Contraseña && <p className="campoInvalido">{errors.Contraseña.message}</p>}
+          {!valido && (
+            <p className="campoInvalido">
+              Contraseña inválida.
+              <br />Debe tener mínimo:
+              <br />1 número
+              <br />1 minúscula
+              <br />1 mayúscula
+              <br />1 carácter especial
+              <br />8 caracteres.
+            </p>
+          )}
+          
           <label>
             <input type="checkbox" class="custom-checkbox" {...register("belongsToOrganization")} />
             ¿Pertenece a una organización benéfica?
           </label>
-          <div className="campoUser">
+          <div className="campoUser11">
+            {/* 
+            <label className="labelRegistro">Datos organización:</label> 
+            */}
               <input className="entradaDatos1" type="text"{...register("organizationName", { required: "El nombre de la organización es obligatorio" })} placeholder="Nombre de organización" />
-              {errors.organizationName && <p className="campoInvalido">{errors.organizationName.message}</p>}
+              {/*errors.organizationName && <p className="campoInvalido">{errors.organizationName.message}</p>*/}
               </div>
               <div className="campoUser">
               <input className="entradaDatos1" type="text"{...register("address", { required: "La dirección es obligatoria" })} placeholder="Dirección" />
-              {errors.address && <p className="campoInvalido">{errors.address.message}</p>}
+              {/*errors.address && <p className="campoInvalido">{errors.address.message}</p>*/}
               </div>
           {belongsToOrganization && (
             <>

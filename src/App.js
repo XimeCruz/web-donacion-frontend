@@ -10,10 +10,11 @@ import Testimonial from "./components/landing/Testimonial";
 import Work from "./components/landing/Work";
 
 
-
 import  RegistrationForm  from "./components/RegistrationForm";
 import RegisterVolun from "./components/RegisterVolun";
 import RegisterDon from "./components/RegisterDon";
+import SolicitudAlimentoForm from "./components/SolicitudAlimentoForm";
+import DonationVolunPage from "./pages/DonationVolunPage";
 
 
 function App() {
@@ -28,10 +29,10 @@ function App() {
             element={
               <>
                 <Home />
-                <About />
-                <Work />
-                <Testimonial />
-                <Contact />
+                <div id="nosotros"><About /></div>
+                <div id="trabajo"><Work /></div>
+                <div id="empresas"><Testimonial /></div>
+                <div id="contactos"><Contact /></div>
                 <Footer />
               </>
             }
@@ -40,7 +41,8 @@ function App() {
           <Route path="/formOrg" element={<RegistrationForm />} />
           <Route path="/regVol" element={<RegisterVolun />} />
           <Route path="/regdon" element={<RegisterDon />} />
-          
+          <Route path="/solialim"element={<SolicitudAlimentoForm/>}/>
+          <Route path="/pageVolDon"element={<DonationVolunPage/>}/>
 
         </Routes>
       </BrowserRouter>

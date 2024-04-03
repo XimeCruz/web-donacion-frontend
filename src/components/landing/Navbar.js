@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Logo from "../../../src/assets/Logo.svg";
-import { BsCart2 } from "react-icons/bs";
+
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -23,23 +23,23 @@ const Navbar = () => {
 
     const menuOptions = [
         {
-        text: "Home",
+        text: "Inicio",
         icon: <HomeIcon />,
         },
         {
-        text: "About",
+        text: "Nosotros",
         icon: <InfoIcon />,
         },
         {
-        text: "Testimonials",
+        text: "¿Cómo trabajamos?",
         icon: <CommentRoundedIcon />,
         },
         {
-        text: "Contact",
+        text: "Empresas aliadas",
         icon: <PhoneRoundedIcon />,
         },
         {
-        text: "Cart",
+        text: "Contacto",
         icon: <ShoppingCartRoundedIcon />,
         },
     ];
@@ -51,16 +51,17 @@ const Navbar = () => {
       const handleRegDon = () => {
         navigate('/regdon');
       };
+     
     return (
         <nav>
             <div className="nav-logo-container">
                 <img src={Logo} alt="" />
             </div>
             <div className="navbar-links-container">
-                <a href="">Nosotros</a>
-                <a href="">¿Como trabajamos?</a>        
-                <a href="">Empresas aliadas</a>
-                <a href="">Contacto</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#trabajo">¿Como trabajamos?</a>        
+                <a href="#empresas">Empresas aliadas</a>
+                <a href="#contactos">Contacto</a>
                 <button className="primary-button" onClick={handleQuieroAyudar}>
                     Recibir ayuda
                 </button>

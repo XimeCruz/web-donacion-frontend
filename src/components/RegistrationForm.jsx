@@ -6,42 +6,37 @@ import '../styles/estilosOrgReg.css';
 import registrationImage from '../images/casaorg.png';
 import { validarPass } from "../functions/validarPassword";
 import { PasswordRForm } from "./PasswordRForm";
+import { registrarUsuario } from "../api/registro.api";
 
 const RegistrationForm = () => {
-  const [valido, setValido] = useState(true);
   const navigate = useNavigate();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+  const [valido, setValido] = useState(true);
+
   const [correoValido, setCorreoValido] = useState(true);
-  const [passwordValido, setPasswordValido] = useState(true);
 
-  const password = watch("password", "");
-  const belongsToOrganization = watch("belongsToOrganization", false);
 
-  const onSubmit = async (data) => {
+  const password = watch("Contraseña", "");
+
+  const onSubmit = handleSubmit(async (data) => {
     setCorreoValido(true);
-    const temp = validarPass(data.password);
-    setPasswordValido(temp);
-
-    if (!temp) {
-      return; // Si la contraseña no es válida, detener la ejecución aquí.
-    }
-
-    if (data.password !== data.confirmPassword) {
-      // Manejar la no coincidencia de contraseñas aquí, si es necesario.
-      return;
-    }
-
-    try {
-      await axios.post('/api/register', data);
-      navigate("/success"); // Cambiar a la ruta deseada después del registro exitoso
-    } catch (error) {
-      console.log(error);
-      if (error.response?.data?.email) {
-        setCorreoValido(false);
+    const temp = validarPass(data.Contraseña);
+    setValido(temp);
+   
+    if (temp && data.ContraseñaRepetida === data.Contraseña) {
+      data.Rol = data.Rol[0];
+      try {
+        await registrarUsuario(data);
+        navigate("/contactos");
+      } catch (err) {
+        console.log(err);
+        if (err.response.data.Correo) {
+          setCorreoValido(false);
+        }
       }
-      // Manejar otros errores
     }
-  };
+  });
 
   return (
     <div className="registration-containerRegOrg">
@@ -91,11 +86,7 @@ const RegistrationForm = () => {
               <input className="entradaDatos1" type="text"{...register("address", { required: "La dirección es obligatoria" })} placeholder="Dirección" />
               {errors.address && <p className="campoInvalido">{errors.address.message}</p>}
               </div>
-          {belongsToOrganization && (
-            <>
           
-            </>
-          )}
           <label className='boton' >
             <input type="checkbox" class="custom-checkbox" {...register("termsAccepted", { required: "Debe aceptar los términos y condiciones" })} />
             Aceptar términos y condiciones del servicio

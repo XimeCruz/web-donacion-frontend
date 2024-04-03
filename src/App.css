@@ -14,10 +14,25 @@ img {
   max-width: 1900px;
   margin: 0rem auto;
 }
+/*seccion cambiada para girar comida*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-image-section img {
+  animation: spin 35s infinite linear;
+}
+/*seccion cambiada para girar comida*/
 body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
 
 body {
   background-color: #f6f6f6;

@@ -128,6 +128,12 @@ button[type="submit"]:hover {
   width: 100%;
   align-items: center;
 }
+
+.campoUser11 {
+  width: 100%;
+  align-items: center;
+}
+
 .custom-checkbox:checked {
   background-color: #21f228;
   color:#61d765;

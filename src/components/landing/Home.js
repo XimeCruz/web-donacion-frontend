@@ -1,21 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import { FiArrowRight } from "react-icons/fi";
 import BannerBackground from "../../../src/assets/home-banner-background.png";
 import BannerImage from "../../../src/assets/home-banner-image.png";
-import RegisterVolun from '../RegisterVolun';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
+
   const handleRegistrate = () => {
-    navigate("/regVol" );
+    navigate("/regVol");
   };
 
   const handleIniciarSesion = () => {
     navigate("/userform");
   };
+
+  const openPopup = () => {
+    // Abre una ventana emergente con dos botones
+    const popup = window.open("", "popup", "width=300,height=200");
+
+    // HTML para los botones en la ventana emergente
+    const popupContent = `
+      <div>
+        <button onclick="window.location.href='/donar'" style="margin-right: 10px;">QUIERO DONAR</button>
+        <button onclick="window.location.href='/ser-voluntario'">QUIERO SER VOLUNTARIO</button>
+      </div>
+    `;
+
+    // Inserta el HTML en la ventana emergente
+    popup.document.body.innerHTML = popupContent;
+  };
+
   return (
     <div className="home-container">
       <Navbar />
@@ -33,12 +49,12 @@ const Home = () => {
           <p className="primary-text">
             Cada acción cuenta
           </p>
-          
-          <button  className="secondary-button" onClick={handleRegistrate}>
-                    QUIERO AYUDAR
+
+          <button className="secondary-button" onClick={handleRegistrate}>
+            QUIERO AYUDAR
           </button>
 
-          <button className="secondary-button"onClick={handleIniciarSesion}>
+          <button className="secondary-button" onClick={handleIniciarSesion}>
             INICIAR SESIÓN
           </button>
         </div>
@@ -51,3 +67,4 @@ const Home = () => {
 };
 
 export default Home;
+

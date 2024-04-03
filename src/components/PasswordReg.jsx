@@ -70,9 +70,7 @@ export function PasswordReg({ pass, confirmPass }) {
           />
         </button>
       </div>
-      {!passwordMatch && (
-        <p className="password-mismatch">Las contraseñas no coinciden</p>
-      )}
+    
       </div>
 
     </div>
