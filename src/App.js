@@ -15,12 +15,13 @@ import RegisterVolun from "./components/RegisterVolun";
 import RegisterDon from "./components/RegisterDon";
 import SolicitudAlimentoForm from "./components/SolicitudAlimentoForm";
 import DonationVolunPage from "./pages/DonationVolunPage";
+import ProductList from "./components/ProductList";
+import PageList from "./components/PageList";
 
 
 function App() {
   const [user, setUser] = useState({Id: 0, Alias: "Inicio Sesion", Tipo: "Usuario"});
   return (
-    
     <div className="App">
       <BrowserRouter>
         <Routes>
@@ -43,7 +44,7 @@ function App() {
           <Route path="/regdon" element={<RegisterDon />} />
           <Route path="/solialim"element={<SolicitudAlimentoForm/>}/>
           <Route path="/pageVolDon"element={<DonationVolunPage/>}/>
-
+          <Route path="/donationList"element={<PageList/>}/>
         </Routes>
       </BrowserRouter>
     </div>

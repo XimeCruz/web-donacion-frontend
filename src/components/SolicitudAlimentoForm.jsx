@@ -57,6 +57,8 @@ const SolicitudAlimentoForm = () => {
     }
   };
 
+  
+
 
   const handleCancel = () => {
     navigate('/');
@@ -69,8 +71,8 @@ const SolicitudAlimentoForm = () => {
         <div className="form-group">
           <input type="file" onChange={handleFileSelection} />
             {selectedFile && (
-              <di style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 20}}>
-                <img src={URL.createObjectURL(selectedFile)} alt={selectedFile.name}/>
+              <di style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30}}>
+                <img src={URL.createObjectURL(selectedFile)} alt={selectedFile.name} />
                 <button type="submit" onClick={() => URL.revokeObjectURL(selectedFile)}>
                   Eliminar vista previa
                 </button>
