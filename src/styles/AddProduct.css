@@ -1,0 +1,133 @@
+.solicitud-alimento-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .form-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #1dc747;
+  }
+  
+  .solicitud-alimento-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .cantidad-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cantidad-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cantidad-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cantidad-input {
+    width: 60px;
+    text-align: center;
+  }
+  
+  .submit-button,
+  .cancel-button {
+    padding: 10px 20px;
+    border-color: #16ec4b;
+    border-radius: 5px;
+    background-color: #fafefb;
+    color: #3af146;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover,
+  .cancel-button:hover {
+    background-color: #c4ecc4;
+  }
+  
+  .sep {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+  }
+  
+  .preview-image {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  .remove-preview-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 600px) {
+    .solicitud-alimento-container {
+      padding: 10px;
+    }
+  
+    .form-title {
+      font-size: 20px;
+    }
+  
+    .cantidad-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+}
+

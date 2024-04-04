@@ -15,8 +15,8 @@ import RegisterVolun from "./components/RegisterVolun";
 import RegisterDon from "./components/RegisterDon";
 import SolicitudAlimentoForm from "./components/SolicitudAlimentoForm";
 import DonationVolunPage from "./pages/DonationVolunPage";
-import ProductList from "./components/ProductList";
 import PageList from "./components/PageList";
+import AddProduct from "./components/AddProduct";
 
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
           <Route path="/solialim"element={<SolicitudAlimentoForm/>}/>
           <Route path="/pageVolDon"element={<DonationVolunPage/>}/>
           <Route path="/donationList"element={<PageList/>}/>
+          <Route path="/soli" element={<AddProduct/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../styles/formularioSolicitud.css'; // Importa estilos únicos para este formulario
-
 const SolicitudAlimentoForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -102,6 +101,7 @@ const SolicitudAlimentoForm = () => {
             <button type="button" className="cantidad-button" onClick={() => handleCantidadChange('increment')}>+</button>
           </div>
         </div>
+        
         <div className="form-group">
           <label htmlFor="motivoSolicitud">Motivo de Solicitud:</label>
           <textarea id="motivoSolicitud" name="motivoSolicitud" value={formData.motivoSolicitud} onChange={handleChange} required />

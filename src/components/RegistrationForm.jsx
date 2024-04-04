@@ -15,7 +15,9 @@ const RegistrationForm = () => {
   const [valido, setValido] = useState(true);
 
   const [correoValido, setCorreoValido] = useState(true);
-
+  const handleCancel = () => {
+    navigate('/');
+  };
 
   const password = watch("Contraseña", "");
 
@@ -93,7 +95,7 @@ const RegistrationForm = () => {
           </label>
           {errors.termsAccepted && <p className="campoInvalido">Debe aceptar los términos y condiciones</p>}
           <div className="button-container">
-            <button type="button" onClick={handleSubmit} className="cancel-button">
+            <button type="button" onClick={handleCancel} className="cancel-button">
               Cancelar
             </button>
             <button type="submit" className="register-button">Registrarme</button>
