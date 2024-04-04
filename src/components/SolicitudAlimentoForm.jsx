@@ -15,6 +15,12 @@ const SolicitudAlimentoForm = () => {
     motivoSolicitud: ''
   });
 
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileSelection = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -39,6 +45,10 @@ const SolicitudAlimentoForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Here, you can use the `image` state to upload the file to a server
+    // using a library like `axios` or the `fetch` API
+
     try {
       await axios.post('/api/solicitud-alimento', formData);
       navigate('/success');
@@ -46,6 +56,7 @@ const SolicitudAlimentoForm = () => {
       console.error('Error al enviar el formulario:', error);
     }
   };
+
 
   const handleCancel = () => {
     navigate('/');
@@ -56,25 +67,24 @@ const SolicitudAlimentoForm = () => {
       <h2 className="form-title">Solicitud de Alimento</h2>
       <form onSubmit={handleSubmit} className="solicitud-alimento-form">
         <div className="form-group">
+          <input type="file" onChange={handleFileSelection} />
+            {selectedFile && (
+              <di style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 20}}>
+                <img src={URL.createObjectURL(selectedFile)} alt={selectedFile.name}/>
+                <button type="submit" onClick={() => URL.revokeObjectURL(selectedFile)}>
+                  Eliminar vista previa
+                </button>
+              </di>
+            )}
+        </div>
+        <div className="form-group">
           <label htmlFor="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required />
         </div>
         <div className="form-group">
-          <label htmlFor="direccion">Dirección:</label>
-          <input type="text" id="direccion" name="direccion" value={formData.direccion} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="correo">Correo:</label>
-          <input type="email" id="correo" name="correo" value={formData.correo} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" name="telefono" value={formData.telefono} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="tipoAlimento">Tipo de Alimento:</label>
+          <label htmlFor="tipoAlimento">Categoria:</label>
           <select id="tipoAlimento" name="tipoAlimento" value={formData.tipoAlimento} onChange={handleChange} required>
-            <option value="">Selecciona una opción</option>
+            <option value="">Tipo de alimento</option>
             <option value="Frutas">Frutas</option>
             <option value="Verduras">Verduras</option>
             <option value="Carnes">Carnes</option>
