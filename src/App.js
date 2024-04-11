@@ -17,7 +17,7 @@ import SolicitudAlimentoForm from "./components/SolicitudAlimentoForm";
 import DonationVolunPage from "./pages/DonationVolunPage";
 import PageList from "./components/PageList";
 import AddProduct from "./components/AddProduct";
-
+import DonationForm from "./components/DonationForm";
 
 function App() {
   const [user, setUser] = useState({Id: 0, Alias: "Inicio Sesion", Tipo: "Usuario"});
@@ -46,6 +46,7 @@ function App() {
           <Route path="/pageVolDon"element={<DonationVolunPage/>}/>
           <Route path="/donationList"element={<PageList/>}/>
           <Route path="/soli" element={<AddProduct/>}/>
+          <Route path="/don" element={<DonationForm/>}/>
         </Routes>
       </BrowserRouter>
     </div>

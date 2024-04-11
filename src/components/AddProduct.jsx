@@ -8,9 +8,11 @@ const AddProduct = ({ onAddProduct }) => {
     const [category, setCategory] = useState('');
     const [otherCategory, setOtherCategory] = useState('');
     const [quantity, setQuantity] = useState(0);
+    const [unit,setUnit] = useState('');
     const [photo, setPhoto] = useState('');
     const [selectedFile, setSelectedFile] = useState(null);
     const [products, setProducts] = useState([]);
+    const [motivo,setMot] = useState('');
   
     const handleAddProduct = (e) => {
       e.preventDefault();
@@ -20,8 +22,10 @@ const AddProduct = ({ onAddProduct }) => {
       setCategory('');
       setOtherCategory('');
       setQuantity(0);
+      setUnit('');
       setPhoto('');
       setSelectedFile(null);
+      setMot('');
     };
   
     const handleFileSelection = (event) => {
@@ -128,6 +132,13 @@ const AddProduct = ({ onAddProduct }) => {
               >
                 +
               </button>
+              <input
+                type="text"
+                placeholder="Unidades de medida"
+                value={unit}
+                onChange={(e) => setUnit(e.target.value)}
+                className="other-category-input"
+              />
             </div>
           </div>
 
@@ -139,6 +150,15 @@ const AddProduct = ({ onAddProduct }) => {
                 products={products}
                 onDeleteProduct={handleDeleteProduct}
             />
+            <div className="form-group">
+                <label htmlFor="motivoSolicitud">Motivo de Solicitud:</label>
+                <textarea 
+                  type ="text"
+                  placeholder="Motivo de Solicitud" 
+                  name="motivoSolicitud" 
+                  value={motivo} 
+                  onChange={(e) => setMot(e.target.value)} required />
+            </div>
             <div className="sep">
               <button type="button" className="cancel-button" onClick={handleCancel}>
                 Cancelar

@@ -1,0 +1,103 @@
+/* Estilos para el formulario de donación */
+.donation-form {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .donation-form__label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .donation-form__input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .donation-form__textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .donation-form__button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .donation-form__button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos para la lista de inventario */
+  .inventory-list {
+    margin-top: 20px;
+  }
+  
+  .inventory-item {
+    background-color: #f8f8f8;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inventory-item__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 16px;
+  }
+  
+  .inventory-item__details {
+    flex: 1;
+  }
+  
+  .inventory-item__name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .inventory-item__description {
+    margin-bottom: 8px;
+  }
+  
+  .inventory-item__info {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  /* Estilos para hacer el formulario y la lista responsivos */
+  @media (max-width: 768px) {
+    .donation-form {
+      padding: 16px;
+    }
+  
+    .inventory-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .inventory-item__image {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
