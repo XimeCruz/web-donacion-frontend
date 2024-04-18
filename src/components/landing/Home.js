@@ -1,12 +1,14 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import BannerBackground from "../../../src/assets/home-banner-background.png";
 import BannerImage from "../../../src/assets/home-banner-image.png";
 import { useNavigate } from 'react-router-dom';
+import Modal from '../../../src/pages/Modal';
 
 const Home = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const handleRegistrate = () => {
     navigate("/regVol");
@@ -14,6 +16,14 @@ const Home = () => {
 
   const handleIniciarSesion = () => {
     navigate("/userform");
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   const openPopup = () => {
@@ -53,6 +63,7 @@ const Home = () => {
           <button className="secondary-button" onClick={handleRegistrate}>
             QUIERO AYUDAR
           </button>
+          
 
           <button className="secondary-button" onClick={handleIniciarSesion}>
             INICIAR SESIÓN
@@ -62,6 +73,7 @@ const Home = () => {
           <img src={BannerImage} alt="" />
         </div>
       </div>
+      <Modal showModal={showModal} closeModal={closeModal} />
     </div>
   );
 };

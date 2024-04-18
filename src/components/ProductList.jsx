@@ -22,7 +22,7 @@ const ProductList = ({ products, onDeleteProduct }) => {
               </td>
               <td>{product.name}</td>
               <td>{product.category}</td>
-              <td>{product.quantity}</td>
+              <td>{product.quantity} {product.unit}</td>
               <td>
                 <button className="remove-preview-button" onClick={() => onDeleteProduct(product.id)}>X</button>
               </td>

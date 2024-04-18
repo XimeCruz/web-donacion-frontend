@@ -16,7 +16,7 @@ const AddProduct = ({ onAddProduct }) => {
   
     const handleAddProduct = (e) => {
       e.preventDefault();
-      const newProduct = { id: products.length + 1, name, category, quantity, photo };
+      const newProduct = { id: products.length + 1, name, category, quantity, unit, photo,selectedFile, motivo};
       setProducts([...products, newProduct]);
       setName('');
       setCategory('');
@@ -134,6 +134,7 @@ const AddProduct = ({ onAddProduct }) => {
               </button>
               <input
                 type="text"
+                id="unit"
                 placeholder="Unidades de medida"
                 value={unit}
                 onChange={(e) => setUnit(e.target.value)}
@@ -157,7 +158,7 @@ const AddProduct = ({ onAddProduct }) => {
                   placeholder="Motivo de Solicitud" 
                   name="motivoSolicitud" 
                   value={motivo} 
-                  onChange={(e) => setMot(e.target.value)} required />
+                  onChange={(e) => setMot(e.target.value)} />
             </div>
             <div className="sep">
               <button type="button" className="cancel-button" onClick={handleCancel}>
